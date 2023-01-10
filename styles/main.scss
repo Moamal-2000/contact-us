@@ -381,6 +381,18 @@ main {
           display: flex;
           align-items: center;
           cursor: pointer;
+          position: relative;
+
+          input[type="file"] {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 100;
+          }
 
           .holder-icon {
             width: 70px;
@@ -394,6 +406,12 @@ main {
             i {
               font-size: 40px;
               color: #3744dd;
+              transition: 0.3s;
+              -webkit-transition: 0.3s;
+              -moz-transition: 0.3s;
+              -ms-transition: 0.3s;
+              -o-transition: 0.3s;
+              user-select: none;
             }
           }
 
@@ -405,6 +423,11 @@ main {
             font-size: 18px;
             text-transform: uppercase;
             user-select: none;
+            transition: 0.3s;
+            -webkit-transition: 0.3s;
+            -moz-transition: 0.3s;
+            -ms-transition: 0.3s;
+            -o-transition: 0.3s;
           }
         }
       }
@@ -446,6 +469,18 @@ main {
       }
     }
   }
+}
+
+.drop-file-area input[type="file"]:hover+.holder-icon i {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+
+.drop-file-area input[type="file"]:hover~.name-file {
+  color: #4475dd;
 }
 
 footer {
@@ -780,6 +815,7 @@ footer {
     form {
       p {
         flex-direction: column;
+        align-items: center;
 
         b {
           margin-left: 0 !important;
